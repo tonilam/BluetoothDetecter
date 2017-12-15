@@ -16,6 +16,9 @@ import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,6 +29,10 @@ public class MainActivity extends AppCompatActivity  {
 
     //private DeviceListFragment mDeviceListFragment;
     private BluetoothAdapter BTAdapter;
+
+    ArrayAdapter<String> listAdapter;
+    Button connectNew;
+    ListView listView;
 
     // variables to store values
 
@@ -79,10 +86,20 @@ public class MainActivity extends AppCompatActivity  {
         // a short duration message on the screen
         Toast.makeText(getApplicationContext(), "Welcome to the app", Toast.LENGTH_SHORT).show();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        init();
+
+//        FragmentManager fragmentManager = getSupportFragmentManager();
 
 //        mDeviceListFragment = DeviceListFragment.newInstance(BTAdapter);
 //        fragmentManager.beginTransaction().replace(R.id.container, mDeviceListFragment).commit();
+    }
+
+    private void init() {
+        connectNew = (Button)findViewById(R.id.bConnectNew);
+        listView = (ListView)findViewById(R.id.myList);
+        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, 0);
+        listView.setAdapter(listAdapter);
     }
 
     @Override
