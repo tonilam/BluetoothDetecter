@@ -7,6 +7,7 @@
     tools:context="com.example.bdbluetoothapp.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -21,9 +22,12 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
+        android:id="@+id/bodyContainer"
         layout="@layout/content_main"
-        android:layout_height="507dp"
-        tools:layout_editor_absoluteY="60dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchorGravity="top|bottom|left|right|center"
+        tools:layout_editor_absoluteY="105dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

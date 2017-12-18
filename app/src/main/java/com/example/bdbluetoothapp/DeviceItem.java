@@ -1,11 +1,10 @@
 package com.example.bdbluetoothapp;
 
 /**
- * Created by tony on 15/12/17.
+ * Created by tony on 18/12/17.
  */
 
 public class DeviceItem {
-
     private String deviceName;
     private String address;
     private boolean connected;
